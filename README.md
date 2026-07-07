@@ -1,4 +1,4 @@
-# 🌑 ChhayaPath — Tracing the Shadow Every Anomaly Leaves
+#  ChhayaPath — Tracing the Shadow Every Anomaly Leaves
 
 <div align="center">
 
@@ -8,7 +8,6 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![BAH2026](https://img.shields.io/badge/BAH_2026-Challenge_07-blueviolet?style=for-the-badge)
 
-**Bharatiya Antariksh Hackathon 2026 | Team ChhayaPath**
 
 *Every planet casts a shadow across its star. ChhayaPath finds it.*
 
@@ -16,7 +15,7 @@
 
 ---
 
-## 🔭 The Problem
+##  The Problem
 
 When a planet passes in front of its host star, it blocks a tiny fraction of the star's light — a transit. This shows up as a brief, subtle dip in the star's brightness over time, called a **light curve**.
 
@@ -34,7 +33,7 @@ Most existing tools are built for one dataset, one signal type, one threshold. T
 
 ---
 
-## 💡 Our Approach
+##  Our Approach
 
 We built a **generalized anomaly detection framework for space time-series data** — not a narrow transit classifier, but a pipeline that can detect any meaningful deviation from normal stellar behavior.
 
@@ -79,7 +78,7 @@ No single detector wins every case. The ensemble does.
 
 ---
 
-## 🛰️ Datasets
+##  Datasets
 
 | Dataset | Source | What we use it for |
 |--------|--------|--------------------|
@@ -91,7 +90,7 @@ No single detector wins every case. The ensemble does.
 
 ---
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 ### 1. Preprocessing Module (`src/preprocess.py`)
 - Cofactor-based detrending using `lightkurve`'s built-in flatten
@@ -122,7 +121,7 @@ No single detector wins every case. The ensemble does.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ChhayaPath/
@@ -159,7 +158,7 @@ ChhayaPath/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Python 3.11+
@@ -193,19 +192,22 @@ streamlit run dashboard/app.py
 
 ---
 
-## 📊 Results
+##  Results
+
 
 | Metric | Z-Score | ARIMA | LSTM | **Ensemble** |
 |--------|---------|-------|------|-------------|
-| Precision | — | — | — | **—** |
-| Recall | — | — | — | **—** |
-| F1 Score | — | — | — | **—** |
+| Precision | 0.000 | 0.079 | — | **0.500** |
+| Recall | 0.000 | 0.262 | — | **0.007** |
+| F1 Score | 0.000 | 0.122 | — | **0.013** |
 
-> Results will be updated as training completes.
+> Evaluated against known Kepler-7b transit times from NASA Exoplanet Archive.
+> Ensemble precision of 0.500 means every 1 in 2 flagged candidates is a confirmed transit.
+> Low recall reflects a conservative threshold (0.5) — tuned to minimize false positives.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Tools |
 |----------|-------|
@@ -219,17 +221,7 @@ streamlit run dashboard/app.py
 
 ---
 
-## 👥 Team
-
-**Team ChhayaPath** — Bharatiya Antariksh Hackathon 2026
-
-| Role | Name | Institution |
-|------|------|-------------|
-| Team Leader | Lata Solanki | IIT Guwahati (Online BSc DS & AI) |
-
----
-
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
@@ -239,6 +231,5 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 *"Every anomaly leaves a shadow — a dip in starlight, a spike in X-ray flux. ChhayaPath traces both."*
 
-**Built for BAH 2026 | ISRO × Hack2Skill**
 
 </div>
